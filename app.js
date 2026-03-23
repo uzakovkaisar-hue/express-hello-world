@@ -1,8 +1,11 @@
 const express = require('express');
+const cors = require('cors');
 const { Sequelize, DataTypes } = require('sequelize');
 
 const app = express();
+app.use(cors());
 app.use(express.json());
+
 
 const sequelize = new Sequelize(process.env.DATABASE_URL, {
   dialect: 'postgres',
